@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:  
+  db_contabil:
+    container_name: db_person_contabil
+    image: postgres:15.4
+    environment:
+      - POSTGRES_DB=contabil
+      - POSTGRES_USER=contabil
+      - POSTGRES_PASSWORD=contabil
+      - PGDATA=/data/postgres
+    volumes:
+      - ./db/v_db_person_contabil:/data/postgres
+    ports:
+      - "5491:5432"
+    networks:
+      - db
+    restart: always
+
+networks:
+  db:
+    driver: bridge
