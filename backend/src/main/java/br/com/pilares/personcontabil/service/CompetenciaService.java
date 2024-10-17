@@ -1,5 +1,6 @@
 package br.com.pilares.personcontabil.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,11 @@ public class CompetenciaService {
 			return ResponseEntity.status(HttpStatus.OK).body(new CompetenciaDTO(competencia.get()));
 		}
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+	}
+
+	public ResponseEntity<List<Integer>> getAnos() {
+		// TODO Auto-generated method stub
+		return ResponseEntity.status(HttpStatus.OK).body(competenciaRepository.findDistinctAnos());
 	}
 	
 }

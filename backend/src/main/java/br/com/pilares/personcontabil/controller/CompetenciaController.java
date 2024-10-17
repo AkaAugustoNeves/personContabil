@@ -1,5 +1,7 @@
 package br.com.pilares.personcontabil.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +22,11 @@ public class CompetenciaController {
 	@GetMapping("/{id}")
 	public ResponseEntity<CompetenciaDTO> getById(@PathVariable Long id) {
 		return competenciaService.findById(id);
+	}
+	
+	@GetMapping("/anos")
+	public ResponseEntity<List<Integer>> getAnos() {
+		return competenciaService.getAnos();
 	}
 
 }
