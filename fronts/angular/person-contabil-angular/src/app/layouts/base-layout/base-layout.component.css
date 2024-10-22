@@ -1,0 +1,46 @@
+.container {
+  display: grid;
+  grid-template: 8vh 92vh/0.5fr 3.5fr;
+  grid-template-areas:
+    "a h"
+    "a m"
+}
+
+.container-closed-sidebar{
+  display: grid;
+  grid-template: 8vh 92vh/0.1fr 4.9fr;
+  grid-template-areas:
+    "a h"
+    "a m";
+}
+
+app-header{
+  background: #FFFFFF;
+  height: 100%;
+  grid-area: h;
+  color: black;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+app-sidebar{
+  background: #FFFFFF;
+  height: 100%;
+  grid-area: a;
+  color: black;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+app-footer{
+  background: red;
+  height: 100%;
+  grid-area: f;
+}
+
+main {
+  background: #EAEAEA;
+  height: 100%;
+  grid-area: m;
+  overflow-y: auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+}

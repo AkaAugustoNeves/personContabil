@@ -1,0 +1,7 @@
+<div [ngClass]="sidebarIsOpen ? 'container' : 'container-closed-sidebar'">
+    <app-header></app-header>
+    <app-sidebar [isOpen]="sidebarIsOpen"  (statusIsOpen)="statusIsOpen($event)"></app-sidebar>
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+</div>
